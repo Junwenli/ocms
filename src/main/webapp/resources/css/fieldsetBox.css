@@ -1,0 +1,45 @@
+div {
+	margin: 0px;
+	padding: 0px;
+}
+.fieldTopLabel {
+	height: 23px;
+	background-color: #d8e0f0;
+ 	border: 1px solid #BFCDDB;
+	border-right: 0px solid #FFFFFF;
+	width: 10%;
+	line-height: 20px;
+	text-align: right;
+	padding-right: 6px;
+	color: #15428b;
+}
+
+.fieldTopValue {
+	width: 38%;
+	height: 23px;
+	border: 1px solid #BFCDDB;
+	padding: 3px 6px 3px 6px;
+	line-height: 20px;
+}
+.fieldLabel {
+	height: 23px;
+	border: 1px solid #BFCDDB;
+	border-top: 0px solid #FFFFFF;
+	border-right: 0px solid #FFFFFF;
+	background-color: #d8e0f0;
+	width: 10%;
+	line-height: 20px;
+	text-align: right;
+	padding-right: 6px;
+	color: #15428b;
+}
+
+.fieldValue {
+	width: 38%;
+	height: 23px;
+	border: 1px solid #BFCDDB;
+	border-top: 0px solid #FFFFFF;
+	padding: 3px 6px 3px 6px;
+	line-height: 20px;
+}
+

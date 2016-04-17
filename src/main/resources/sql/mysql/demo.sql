@@ -1,0 +1,257 @@
+delete from T_SYS_DEPARTMENT;
+delete from T_SYS_USERS;
+delete from T_SYS_ROLE;
+delete from T_SYS_MEMBERSHIP;
+delete from T_SYS_PERMISSION;
+delete from T_SYS_ROLE_PERMISSION;
+delete from T_SYS_ICON;
+delete from T_SYS_ICON_ROLE;
+delete from T_SYS_AREA;
+
+insert into T_SYS_DEPARTMENT (DEPT_ID,DEPT_CODE, AUDIT_VOLUMN, DESCRIPTION, RES_RATE, TITLE)
+values (1,'developmentDept', 0, '广东省网维', 30, '广州东省网维');
+
+insert into T_SYS_USERS (USER_ID,USER_CODE,AUTHENTICATOR,NAME,STATUS,DEPT_ID)
+values (1,'admin','F6FDFFE48C908DEB0F4C3BD36C032E72','系统管理员',1,1);
+
+insert into T_SYS_ROLE (ROLE_ID,ROLE_CODE, DESCRIPTION, STATUS, TITLE)
+values (1,'adminRole', '系统开发及维护人员角色', 1,'系统维护角色');
+insert into T_SYS_ROLE (ROLE_ID,ROLE_CODE, DESCRIPTION, STATUS, TITLE)
+values (2,'marketRole', '营销人员角色，具有申请营销活动、创建目标用户等权限', 1, '营销人员角色');
+insert into T_SYS_ROLE (ROLE_ID,ROLE_CODE, DESCRIPTION, STATUS, TITLE)
+values (3,'firstApplyGroup', '一级审核角色，审核同部门的营销活动', 1, '一级审核角色');
+insert into T_SYS_ROLE (ROLE_ID,ROLE_CODE, DESCRIPTION, STATUS, TITLE)
+values (4,'adminApplyGroup', '管理员审核角色，在一级审核通过之后，审核同部门的营销活动', 1, '管理员审核角色');
+
+insert into T_SYS_MEMBERSHIP (MEMBERSHIP_ID,ROLE_ID,USER_ID)
+values (1, 1, 1);
+insert into T_SYS_MEMBERSHIP (MEMBERSHIP_ID,ROLE_ID,USER_ID)
+values (2, 3, 1);
+insert into T_SYS_MEMBERSHIP (MEMBERSHIP_ID,ROLE_ID,USER_ID)
+values (3, 4, 1);
+
+INSERT INTO `t_sys_permission` VALUES (1, '100', '开发平台', 0, 0, '/**', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (2, '1', '系统管理', 1, 1, '', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (3, '2', '角色管理', 1, 2, '/role/role.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (4, '3', '权限管理', 1, 2, '/resource/resource.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (5, '4', '用户管理', 1, 2, '/user/user.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (6, '5', '部门管理', 1, 2, '/department/department.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (7, '16', '参数管理', 1, 2, '/param/param.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (8, '17', '首页管理', 1, 2, '/icon/icon.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (9, 'GRANT_ICON', '授权', 2, 8, '/icon/icon!listRole.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (10, 'QUERY_ROLE', '查询', 2, 3, '/role/role!listAjax.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (11, 'BATCH_DELETE_ROLE', '删除', 2, 3, '/role/role!delete.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (12, 'GRANT_ROLE', '授权', 2, 3, '/permission/permission', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (13, 'UPDATE_ROLE', '修改', 2, 3, '/role/role!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (14, 'ADD_ROLE', '添加', 2, 3, '/role/role!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (15, 'DELETE_RESOURCE', '删除', 2, 4, '/resource/resource!delete.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (16, 'UPDATE_RESOURCE', '修改', 2, 4, '/resource/resource!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (17, 'SAVE_ROLE', '保存', 2, 3, '/role/role!saveByOperate.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (18, 'SAVE_USER', '保存', 2, 5, '/user/user!saveByOperate.action', NULL, '100');
+INSERT INTO `t_sys_permission` VALUES (19, 'SAVE_DEPARMENT', '保存', 2, 6, '/department/department!saveByOperate.action', NULL, '100');
+INSERT INTO `t_sys_permission` VALUES (20, 'SAVE_ICON', '保存', 2, 8, '/icon/icon!save.action', NULL, '100');
+INSERT INTO `t_sys_permission` VALUES (21, 'SAVE_RESOURCE', '保存', 2, 4, '/resource/resource!saveByOperate.action', NULL, '100');
+INSERT INTO `t_sys_permission` VALUES (22, 'SAVE_PARAM', '保存', 2, 7, '/param/param!saveByOperate.action', NULL, '100');
+INSERT INTO `t_sys_permission` VALUES (23, 'ADD_RESOURCE', '添加', 2, 4, '/resource/resource!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (24, 'BATCH_DELETE_USER', '删除', 2, 5, '/user/user!delete.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (25, 'GRANT_USER', '授权', 2, 5, '/membership/membership.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (26, 'ADD_USER', '添加', 2, 5, '/user/user!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (27, 'UPDATE_USER', '修改', 2, 5, '/user/user!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (28, 'QUERY_USER', '查询', 2, 5, '/user/user!listAjax.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (29, 'UPDATEPASSWORD_USER', '修改密码', 2, 5, '/user/user!pwd.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (30, 'ADD_DEPARTMENT', '添加', 2, 6, '/department/department!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (31, 'UPDATE_DEPARTMENT', '修改', 2, 6, '/department/department!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (32, 'BATCH_DELETE_DEPARTMENT', '删除', 2, 6, '/department/department!delete.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (33, 'LISTUSER_DEPARTMENT', '部门用户列表', 2, 6, '/user/user!listAjax.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (34, 'ADD_PARAM', '添加', 2, 7, '/param/param!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (35, 'BATCH_DELETE_PARAM', '删除', 2, 7, '/param/param!delete.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (36, 'BATCH_DELETE_ICON', '删除', 2, 8, '/icon/icon!delete.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (37, 'ADD_ICON', '添加', 2, 8, '/icon/icon!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (38, 'UPDATE_PARAM', '修改', 2, 7, '/param/param!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (39, 'QUERY_ICON', '查询', 2, 8, '/icon/icon!listAjax.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (40, 'UPDATE_ICON', '修改', 2, 8, '/icon/icon!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (43, '18', '区域管理', 1, 2, '/area/area.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (44, 'BATCH_DELETE_AREA', '删除', 2, 43, '/area/area!delete.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (45, 'ADD_AREA', '添加', 2, 43, '/area/area!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (46, 'UPDATE_AREA', '修改', 2, 43, '/area/area!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (47, 'LIST_AREA', '区域查询', 2, 43, '/area/area!listAjax.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (48, 'SAVE_AREA', '保存', 2, 43, '/area/area!saveByOperate.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (49, 'STUDENT_MGR', '学生管理', 1, 63, '/student/student.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (50, 'BATCH_DELETE_STUDENT', '删除', 2, 49, '/student/student!delete.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (51, 'ADD_STUDENT', '添加', 2, 49, '/student/student!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (52, 'UPDATE_STUDENT', '修改', 2, 49, '/student/student!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (53, 'QUERY_STUDENT', '查询', 2, 49, '/student/student!listAjax.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (54, 'SAVE_STUDENT', '保存', 2, 49, '/student/student!saveByOperate.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (55, 'CLASS_MGR', '班级管理', 1, 63, '/classinfo/class-info.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (56, 'BATCH_DELETE_CLASSINFO', '删除', 2, 55, '/classinfo/class-info!delete.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (57, 'ADD_CLASSINFO', '添加', 2, 55, '/classinfo/class-info!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (58, 'UPDATE_CLASSINFO', '修改', 2, 55, '/classinfo/class-info!input.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (59, 'QUERY_CLASSINFO', '查询', 2, 55, '/classinfo/class-info!listAjax.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (60, 'SAVE_CLASSINFO', '保存', 2, 55, '/classinfo/class-info!saveByOperate.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (61, 'EXPORT_STUDENT', '导出', 2, 49, '/student/student!export.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (62, 'CODE_MGR', '代码生成', 1, 2, '/code/code.action', 0, '100');
+INSERT INTO `t_sys_permission` VALUES (63, 'demo', 'demo', 1, 1, '', 0, '100');
+
+INSERT INTO `t_sys_role_permission` VALUES (1, 35, 1);
+INSERT INTO `t_sys_role_permission` VALUES (2, 11, 1);
+INSERT INTO `t_sys_role_permission` VALUES (3, 15, 1);
+INSERT INTO `t_sys_role_permission` VALUES (4, 24, 1);
+INSERT INTO `t_sys_role_permission` VALUES (5, 32, 1);
+INSERT INTO `t_sys_role_permission` VALUES (6, 36, 1);
+INSERT INTO `t_sys_role_permission` VALUES (7, 10, 1);
+INSERT INTO `t_sys_role_permission` VALUES (8, 13, 1);
+INSERT INTO `t_sys_role_permission` VALUES (9, 14, 1);
+INSERT INTO `t_sys_role_permission` VALUES (10, 23, 1);
+INSERT INTO `t_sys_role_permission` VALUES (11, 16, 1);
+INSERT INTO `t_sys_role_permission` VALUES (12, 25, 1);
+INSERT INTO `t_sys_role_permission` VALUES (13, 26, 1);
+INSERT INTO `t_sys_role_permission` VALUES (14, 27, 1);
+INSERT INTO `t_sys_role_permission` VALUES (15, 28, 1);
+INSERT INTO `t_sys_role_permission` VALUES (16, 29, 1);
+INSERT INTO `t_sys_role_permission` VALUES (17, 30, 1);
+INSERT INTO `t_sys_role_permission` VALUES (18, 31, 1);
+INSERT INTO `t_sys_role_permission` VALUES (19, 33, 1);
+INSERT INTO `t_sys_role_permission` VALUES (20, 37, 1);
+INSERT INTO `t_sys_role_permission` VALUES (21, 39, 1);
+INSERT INTO `t_sys_role_permission` VALUES (23, 9, 1);
+INSERT INTO `t_sys_role_permission` VALUES (24, 34, 1);
+INSERT INTO `t_sys_role_permission` VALUES (25, 38, 1);
+INSERT INTO `t_sys_role_permission` VALUES (26, 2, 1);
+INSERT INTO `t_sys_role_permission` VALUES (27, 3, 1);
+INSERT INTO `t_sys_role_permission` VALUES (28, 4, 1);
+INSERT INTO `t_sys_role_permission` VALUES (29, 5, 1);
+INSERT INTO `t_sys_role_permission` VALUES (30, 6, 1);
+INSERT INTO `t_sys_role_permission` VALUES (31, 7, 1);
+INSERT INTO `t_sys_role_permission` VALUES (32, 8, 1);
+INSERT INTO `t_sys_role_permission` VALUES (33, 1, 1);
+INSERT INTO `t_sys_role_permission` VALUES (34, 12, 1);
+INSERT INTO `t_sys_role_permission` VALUES (35, 22, 1);
+INSERT INTO `t_sys_role_permission` VALUES (36, 17, 1);
+INSERT INTO `t_sys_role_permission` VALUES (37, 21, 1);
+INSERT INTO `t_sys_role_permission` VALUES (38, 18, 1);
+INSERT INTO `t_sys_role_permission` VALUES (39, 19, 1);
+INSERT INTO `t_sys_role_permission` VALUES (40, 20, 1);
+INSERT INTO `t_sys_role_permission` VALUES (41, 1, 2);
+INSERT INTO `t_sys_role_permission` VALUES (42, 49, 1);
+INSERT INTO `t_sys_role_permission` VALUES (43, 50, 1);
+INSERT INTO `t_sys_role_permission` VALUES (44, 51, 1);
+INSERT INTO `t_sys_role_permission` VALUES (45, 52, 1);
+INSERT INTO `t_sys_role_permission` VALUES (46, 53, 1);
+INSERT INTO `t_sys_role_permission` VALUES (47, 54, 1);
+INSERT INTO `t_sys_role_permission` VALUES (48, 55, 1);
+INSERT INTO `t_sys_role_permission` VALUES (49, 56, 1);
+INSERT INTO `t_sys_role_permission` VALUES (50, 57, 1);
+INSERT INTO `t_sys_role_permission` VALUES (51, 58, 1);
+INSERT INTO `t_sys_role_permission` VALUES (52, 59, 1);
+INSERT INTO `t_sys_role_permission` VALUES (53, 60, 1);
+INSERT INTO `t_sys_role_permission` VALUES (54, 61, 1);
+INSERT INTO `t_sys_role_permission` VALUES (56, 40, 1);
+INSERT INTO `t_sys_role_permission` VALUES (57, 62, 1);
+INSERT INTO `t_sys_role_permission` VALUES (58, 63, 1);
+
+
+
+
+insert into t_sys_icon (ICON_ID, ICON_URL, TITLE, URL)
+values (7, '/resources/images/index_icon_user.png', 'icon_title_user', '/user/user.action');
+
+insert into t_sys_icon (ICON_ID, ICON_URL, TITLE, URL)
+values (3, '/resources/images/index_icon_target_user.png', 'icon_title_userGroup', '/targetUserGroup/target-user-group.action');
+
+insert into t_sys_icon (ICON_ID, ICON_URL, TITLE, URL)
+values (4, '/resources/images/index_icon_param.png', 'icon_title_parameter', '/param/param.action');
+
+insert into t_sys_icon (ICON_ID, ICON_URL, TITLE, URL)
+values (5, '/resources/images/index_icon_role.png', 'icon_title_role', '/role/role.action');
+
+insert into t_sys_icon (ICON_ID, ICON_URL, TITLE, URL)
+values (6, '/resources/images/index_icon_resource.png', 'icon_title_privilege', '/resource/resource.action');
+
+insert into t_sys_icon (ICON_ID, ICON_URL, TITLE, URL)
+values (8, '/resources/images/index_icon_dept.png', 'icon_title_department', '/department/department.action');
+
+insert into t_sys_icon (ICON_ID, ICON_URL, TITLE, URL)
+values (9, '/resources/images/index_icon_dept.png', 'icon_title_area', '/area/area.action');
+
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3056, 3, 2);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3050, 1, 2);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3051, 1, 3);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3052, 1, 4);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3053, 2, 2);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3054, 2, 3);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3055, 2, 4);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3057, 3, 3);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3058, 3, 4);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3059, 4, 3);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3060, 4, 4);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3061, 10, 2);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3062, 10, 3);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3063, 10, 4);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (2, 2, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (3, 3, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (4, 4, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (5, 5, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (6, 6, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (7, 7, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (8, 8, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (9, 9, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (10, 10, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (1, 1, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (5050, 1050, 1);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (5051, 1050, 3);
+
+insert into t_sys_icon_role (ITEM_ID, ICON_ID, ROLE_ID)
+values (5052, 1050, 4);
+

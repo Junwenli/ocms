@@ -1,0 +1,215 @@
+body{
+    background:url(../images/lg-bg.png) repeat-x left top #fff;
+}
+.login-box {
+    width:697px;
+	height:293px; 
+	position:absolute; 
+	top:50%; 
+	left:50%; 
+	margin:-146.5px 0px 0px -348.5px; 
+	font: 'Î¢ÈíÑÅºÚ' ; 
+	font-size:14px;
+}
+.login-left-box {
+    background:url(../images/lg-box-left-bg.png) left bottom no-repeat; 
+	width:330px; 
+	height:293px; 
+	float: left;
+}
+.login-right-box {
+    background:url(../images/lg-box-right-bg.png) left bottom no-repeat; 
+	width:367px; 
+	height:293px; 
+	float:left;
+	color: #0099CC;
+}
+.login-button1 {
+    background:url(../images/login-but.png) no-repeat left top; 
+	width:63px; 
+	height:28px; 
+	border:0; 
+	cursor:pointer;
+	margin-right: 10px;
+}
+.login-button2 {
+    background:url(../images/forget-but.png) no-repeat left top; 
+	width:63px; 
+	height:28px; 
+	border:0; 
+	cursor:pointer;
+}
+
+
+.step-label-box {
+	float: left;
+	height: 30px;
+	width: 100%;
+	background-image: url(images/line.png);
+	background-repeat: repeat-x;
+	font-family: "Î¢ÈíÑÅºÚ";
+	font-size: 12px;
+	line-height: 14px;
+	color: #333;
+	margin: 4px 0 4px 0;
+	white-space:nowrap;
+	margin: 4px;
+	
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+.step-label-box-1 {
+	float: left;
+	width: 70%;
+	list-style-type: none;
+}
+.step-label-box-2 {
+	float: left;
+	width: 80%;
+	list-style-type: none;
+}
+.one {
+	background-image: url(images/1.png);
+	float: left;
+	height: 30px;
+	width: 5%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.two {
+	background-image: url(images/2.png);
+	float: left;
+	height: 30px;
+	width: 5%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.three {
+	background-image: url(images/3.png);
+	float: left;
+	height: 30px;
+	width: 5%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.four {
+	background-image: url(images/4.png);
+	float: left;
+	height: 30px;
+	width: 5%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.num1 {
+	float: left;
+	width: 8%;
+	list-style-type: none;
+	background-image: url(images/1-1.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	height: 30px;
+	text-align: center;
+	overflow: hidden;
+}
+.num2 {
+	float: left;
+	width: 11%;
+	list-style-type: none;
+	background-image: url(images/2-1.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	height: 30px;
+	text-align: center;
+	overflow: hidden;
+}
+.num3 {
+	float: left;
+	width: 11%;
+	list-style-type: none;
+	background-image: url(images/3-1.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	height: 30px;
+	text-align: center;
+	overflow: hidden;
+}
+.num4 {
+	float: left;
+	width: 8%;
+	list-style-type: none;
+	background-image: url(images/4-1.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	height: 30px;
+	text-align: center;
+	overflow: hidden;
+	}
+.yingxiao {
+	height: auto;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 12px;
+	line-height: 18px;
+	color: #333;
+}
+.yingxiao p {
+	margin: 0px;
+	padding: 0px;
+}
+
+.step-content {
+	float: left;
+	height: auto;
+	width: 100%;
+}
+.step-content li {
+	float: left;
+	list-style-type: none;
+}
+
+.step1-left-box {
+	height: auto;
+	width: 40%;
+	overflow: hidden;
+}
+.step1-middle {
+	width: 10%;
+	text-align: center;
+	padding-top: 30px;
+}
+.step1-middle a, .step1-middle a:link { font-weight:bold; cursor:pointer;}
+.step1-middle a:hover, .step1-middle a:active { font-weight:bold; color:#FF6600; cursor:pointer;}
+.step1-right-box {
+	height: auto;
+	width: 50%;
+}
+.panel-box-input {
+	width:40%;
+	height:18px;
+	padding:2px;
+	line-height:18px;
+	font-size:12px;
+}
+.panel-box-input1 {
+	width:20%;
+	height:18px;
+	padding:2px;
+	line-height:18px;
+	font-size:12px;
+}
+.panel-box-textarea {
+	width:80%;
+	height:54px;
+	padding:2px;
+	line-height:18px;
+	font-size:12px;
+}
+.yingxiao em {
+	color: #FF0000;
+}
+.introduct-icon{width:20px; height:30px; background: url(../images/role_icon.png) no-repeat center center; float:left; font-weight:bold;}
+.introduct-icon {width:95%; height:auto; line-height:30px; margin:8px 4px 8px 4px;}

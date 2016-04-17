@@ -1,0 +1,213 @@
+<!--
+.step-label-box  {
+float: left;
+	height: 30px;
+	width: 100%;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	line-height: 14px;
+	color: #333;
+	margin: 4px 0 4px 0;
+	white-space:nowrap;
+	margin: 4px;
+}
+a, a:link { text-decoration:none; color:#333;}
+a:hover, a:active { text-decoration:none; color:#ff6600	;}
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+.step-label-box-1 {
+	float: left;
+	width: 60%;
+	list-style-type: none;
+}
+.step-label-box-2 {
+	float: left;
+	width: 80%;
+	list-style-type: none;
+}
+.one {
+	background-image: url(images/1.png);
+	float: left;
+	height: 30px;
+	width: 5%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.two {
+	background-image: url(images/2.png);
+	float: left;
+	height: 30px;
+	width: 5%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.three {
+	background-image: url(images/3.png);
+	float: left;
+	height: 30px;
+	width: 5%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.four {
+	background-image: url(images/4.png);
+	float: left;
+	height: 30px;
+	width: 5%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.num1 {
+	float: left;
+	width: 8%;
+	list-style-type: none;
+	background-image: url(images/1-1.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	height: 30px;
+	text-align: center;
+	overflow: hidden;
+}
+.num2 {
+	float: left;
+	width: 11%;
+	list-style-type: none;
+	background-image: url(images/2-1.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	height: 30px;
+	text-align: center;
+	overflow: hidden;
+}
+.num3 {
+	float: left;
+	width: 11%;
+	list-style-type: none;
+	background-image: url(images/3-1.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	height: 30px;
+	text-align: center;
+	overflow: hidden;
+}
+.num4 {
+	float: left;
+	width: 8%;
+	list-style-type: none;
+	background-image: url(images/4-1.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	height: 30px;
+	text-align: center;
+	overflow: hidden;
+	}
+.yingxiao {
+	height: auto;
+	width: 99%;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 12px;
+	line-height: 18px;
+	color: #333;
+}
+
+.main-div {
+	height:460px;
+	overflow-y:auto;
+	border:0px solid;
+}
+
+.desc-div {
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:5px;
+	padding-top:5px;
+	width:800px;
+	white-space:normal;
+	display:block;
+	word-break:break-all;
+}
+
+.yingxiao p {
+	margin: 0px;
+	padding: 0px;
+}
+
+.step-content {
+	float: left;
+	height: auto;
+	width: 100%;
+	overflow: auto;
+	font-size:12px;
+	font-family:"微软雅黑"
+}
+.step-content table {
+	font-size:12px;
+	font-family:"微软雅黑"
+}
+.step-content li {
+	float: left;
+	list-style-type: none;
+}
+
+.step1-left-box {
+	height: auto;
+	width: 47%;
+	overflow: hidden;
+}
+.step1-middle {
+	width: 5%;
+	text-align: center;
+	padding-top: 30px;
+}
+.step1-middle a, .step1-middle a:link { font-weight:bold; cursor:pointer;}
+.step1-middle a:hover, .step1-middle a:active { font-weight:bold; color:#FF6600; cursor:pointer;}
+.step1-right-box {
+	height: auto;
+	width: 47%;
+}
+.input-div {
+	float:left
+}
+.input-span {
+	float:left
+}
+.panel-box-input {
+	width:40%;
+	height:18px;
+	padding:2px;
+	line-height:18px;
+	font-size:12px;
+}
+.panel-box-input1 {
+	width:20%;
+	height:18px;
+	padding:2px;
+	line-height:18px;
+	font-size:12px;
+}
+.panel-box-textarea {
+	width:80%;
+	height:54px;
+	padding:2px;
+	line-height:18px;
+	font-size:12px;
+}
+.yingxiao em {
+	color: #FF0000;
+}
+.introduct-icon{width:20px; height:30px; background: url(../images/role_icon.png) no-repeat center center; float:left; font-weight:bold;}
+.introduct-div {width:95%; height:auto; line-height:30px; margin:8px 4px 8px 4px;}
+input ,textarea,.edit-font {font-size:13px;font-family:sans-serif}
+-->
+.datagrid-wrapper {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.datagrid-wrapper .datagrid-toolbar{
+	border-top-style:solid;
+	border-top-width:1px;
+	border-top-color:#cccccc;
+}
